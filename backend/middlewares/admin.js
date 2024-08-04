@@ -11,11 +11,10 @@ function adminMiddleware(req, res, next) {
         username : username,
         password : password
     })
-   // console.log("before .then")
+   
     .then (function(value){
         console.log(value)
         if(value) {
-            console.log("into the if")
             next();
         } else {
             res.status(403).json({
